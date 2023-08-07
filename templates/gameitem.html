@@ -1,0 +1,17 @@
+<div class="row">
+<div class="col-9" style="margin-bottom: 40px;">
+    <h4 style="color: crimson;margin-bottom: 4px;">
+        {{i['title']}}</h4>
+    <div>
+        <b>Available in {{i['location']}}</b>
+    </div>
+    {% if 'cost' in i %}
+    <div>
+        Cost : {{i['cost']}}
+    </div>
+    {% endif %}
+</div>
+<div class="col-3">
+    <button type="button" class="btn btn-success">Check on Site</button>
+</div>
+</div>

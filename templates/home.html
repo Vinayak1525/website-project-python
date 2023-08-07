@@ -24,7 +24,7 @@
           style="font-family: fangsong"
           class="navbar-brand"
           href="https://www.youtube.com/@Bane1525"
-          >BaneNZ</a
+          >{{Website}}</a
         >
       </div>
     </nav>
@@ -48,9 +48,12 @@
         kinds of personal conflicts that make it so fascinating to study real
         history.
       </p>
-      <p>{% for job in jobs %} {%endfor %}</p>
-      <h2 class="text-center mt-2 mb-4">Open Positions</h2>
-      <p>TODO - Show the jobs here</p>
+      <h2 class="text-center mt-4 mb-4">Open Positions</h2>
+      <div>
+        {% for i in games %}
+          {% include 'gameitem.html' %}  <!-- getting data from gameitem.html to home.html-->
+        {% endfor %}
+      </div>
       <div class="text-center">
         <button type="button" class="btn btn-primary btn-sm">Contact Us</button>
         <p class="mt-4">Copyright 2023, Banegaming1525</p>

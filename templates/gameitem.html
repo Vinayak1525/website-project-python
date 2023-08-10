@@ -12,6 +12,11 @@
     {% endif %}
 </div>
 <div class="col-3">
-    <button type="button" class="btn btn-success">Check on Site</button>
+    {% if i['location'] == "Steam" %}
+    <a href="https://store.steampowered.com/" 
+    type="button" class="btn btn-success">Check on Site</a>
+    {% else %}
+        <a href="https://store.epicgames.com/en-US/"><button type="button" class="btn btn-success">Check on Site</button></a>
+    {% endif %}
 </div>
 </div>

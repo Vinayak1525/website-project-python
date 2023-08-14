@@ -1,5 +1,5 @@
 from sqlalchemy import create_engine, text
-#db_con_string="mysql+pymysql://Password123!:azure_admin@banenz.mysql.database.azure.com:3306/gameslist"
+db_con_string="mysql+pymysql://azure_admin:Password123!@flexi-banenz.mysql.database.azure.com/games_banenz"
 
 connection_string = (
     'DRIVER=MySQL ODBC 8.0 ANSI Driver;'
@@ -17,7 +17,7 @@ connection_string = (
 
 
 engine = create_engine(
-    "mysql+pymysql://azure_admin:Password123!@flexi-banenz.mysql.database.azure.com/games_banenz",
+    db_con_string,
     connect_args={
         "ssl": {
             "ssl_ca": "/var/www/html/DigiCertGlobalRootG2.crt.pem"
@@ -29,4 +29,13 @@ engine = create_engine(
 
 with engine.connect() as conn:
     result=conn.execute(text("select * from gameslist"))
-    print(result.all())
+    data1=result.all()[0] 
+
+    #store data into a dictionary
+
+result_dicts = []
+for row in result.all():
+    result_dicts.append(dict(row))
+
+print(result_dicts) 
+

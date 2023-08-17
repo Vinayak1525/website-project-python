@@ -1,22 +1,26 @@
 <div class="row">
-<div class="col-9" style="margin-bottom: 40px;">
-    <h4 style="color: crimson;margin-bottom: 4px;">
-        {{i['title']}}</h4>
+  <div class="col-1"></div>
+  <div class="col-9" style="margin-bottom: 40px">
+    <h4 style="color: crimson; margin-bottom: 4px">{{i['gametitle']}}</h4>
     <div>
-        <b>Available in {{i['location']}}</b>
+      <b>Available in {{i['location']}}</b>
     </div>
     {% if 'cost' in i %}
-    <div>
-        Cost : {{i['cost']}}
-    </div>
+    <div>Cost : {{i['cost']}}</div>
     {% endif %}
-</div>
-<div class="col-3">
+  </div>
+  <div class="col-2">
     {% if i['location'] == "Steam" %}
-    <a href="https://store.steampowered.com/" 
-    type="button" class="btn btn-success">Check on Site</a>
+    <a
+      href="https://store.steampowered.com/"
+      type="button"
+      class="btn btn-success"
+      >Check on Site</a
+    >
     {% else %}
-        <a href="https://store.epicgames.com/en-US/"><button type="button" class="btn btn-success">Check on Site</button></a>
+    <a href="https://store.epicgames.com/en-US/"
+      ><button type="button" class="btn btn-success">Check on Site</button></a
+    >
     {% endif %}
-</div>
+  </div>
 </div>
